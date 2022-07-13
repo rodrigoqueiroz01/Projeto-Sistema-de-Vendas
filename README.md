@@ -1,4 +1,4 @@
-# Projeto Sistema de Vendas
+# Projeto - Sistema de Vendas
 
 ### Esse projeto foi feito com o intuito de praticar a Programação Orientada a Objeto. 
 

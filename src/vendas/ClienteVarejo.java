@@ -118,7 +118,6 @@ public class ClienteVarejo {
 		System.out.println("Bairro: " + this.getBairro());
 		System.out.println("Telefone: " + this.getTelefone());
 		System.out.println("Email: " + this.getEmail());
-		
 	}
 	
 	public void ativar() {
