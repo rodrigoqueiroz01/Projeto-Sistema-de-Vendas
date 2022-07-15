@@ -1,7 +1,8 @@
 package vendas;
 
-public class ClienteVarejo {
+public class ClienteVarejo implements Cadastro {
 	
+	// ATRIBUTOS
 	private String nomeCompleto;
 	private String cpf;
 	private String dataNascimento;
@@ -15,19 +16,20 @@ public class ClienteVarejo {
 	private boolean desativado;
 	
 	
-	public ClienteVarejo(String nomeCompleto, String cpf, String dataNascimento, String cep, String endereço,
-			int numero, String bairro, String telefone, String email) {
-		this.nomeCompleto = nomeCompleto;
-		this.cpf = cpf;
-		this.dataNascimento = dataNascimento;
-		this.cep = cep;
-		this.endereço = endereço;
-		this.numero = numero;
-		this.bairro = bairro;
-		this.telefone = telefone;
-		this.email = email;
+	// MÉTODOS ESPECIAIS
+	public ClienteVarejo() {
+		this.nomeCompleto = null;
+		this.cpf = null;
+		this.dataNascimento = null;
+		this.cep = null;
+		this.endereço = null;
+		this.numero = 0;
+		this.bairro = null;
+		this.telefone = null;
+		this.email = null;
+		this.ativado = false;
+		this.desativado = true;
 	}
-	
 	
 	public String getNomeCompleto() {
 		return nomeCompleto;
@@ -105,27 +107,38 @@ public class ClienteVarejo {
 	public void setDesativado(boolean desativado) {
 		this.desativado = desativado;
 	}
-
-
-	public void dadosVarejo() {
-		System.out.println("CLIENTE VAREJO: ");
-		System.out.println("\nNome completo: " + this.getNomeCompleto());
-		System.out.println("CPF: " + this.getCpf());
-		System.out.println("Data de Nascimento: " + this.getDataNascimento());
-		System.out.println("CEP: " + this.getCep());
-		System.out.println("Endereço: " + this.getEndereço());
-		System.out.println("Numero: " + this.getNumero());
-		System.out.println("Bairro: " + this.getBairro());
-		System.out.println("Telefone: " + this.getTelefone());
-		System.out.println("Email: " + this.getEmail());
+	
+	
+	// MÉTODOS ABSTRATOS
+	@Override
+	public void ativarCadastroCliente() {
+		if (this.isDesativado()) {
+			this.setAtivado(isAtivado() == true);
+		}
 	}
 	
-	public void ativar() {
-		this.isAtivado();
+	
+	@Override
+	public void desativarCadastroCliente() {
+		if(this.isAtivado() == true) {
+			this.setDesativado(isDesativado() == true);
+		}
 	}
 	
-	public void desativar() {
-		this.isDesativado();
-	}
+	
+//	public void dadosVarejo() {
+//		System.out.println("CLIENTE VAREJO: ");
+//		System.out.println("\nNome completo: " + this.getNomeCompleto());
+//		System.out.println("CPF: " + this.getCpf());
+//		System.out.println("Data de Nascimento: " + this.getDataNascimento());
+//		System.out.println("CEP: " + this.getCep());
+//		System.out.println("Endereço: " + this.getEndereço());
+//		System.out.println("Numero: " + this.getNumero());
+//		System.out.println("Bairro: " + this.getBairro());
+//		System.out.println("Telefone: " + this.getTelefone());
+//		System.out.println("Email: " + this.getEmail());
+//	}
+
+
 
 }

@@ -1,6 +1,6 @@
 package vendas;
 
-public class ClienteAtacado {
+public class ClienteAtacado implements Cadastro {
 	
 	private String razaoSocial;
 	private String cnpj;
@@ -89,5 +89,26 @@ public class ClienteAtacado {
 		System.out.println("Email: " + this.getEmail());
 		System.out.println("Status do cliente: " + isAtivo());
 	}
+	@Override
+	public void ativarCadastroCliente() {
+		
+	}
+	@Override
+	public void desativarCadastroCliente() {
+		
+	}
+	
+//	@Override
+//	public void efetuarCompra() {
+//		
+//	}
+//	@Override
+//	public void cancelarCompra() {
+//		
+//	}
+//	@Override
+//	public void efetuarTrocaCliente() {
+//		
+//	}
 	
 }
